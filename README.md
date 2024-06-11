@@ -6,7 +6,7 @@ Practice_public_IHC
 - flask 사용한 웹 프로그램
 - 단순한 계산기
 
-app.py
+### app.py
 ```python
 from flask import Flask, render_template, request
 app = Flask(__name__)
@@ -38,7 +38,7 @@ if __name__ == '__main__':
     app.run(debug=True)
 ```
 
-templates/index.html
+### templates/index.html
 ```html
 <!DOCTYPE html>
 <html lang="en">

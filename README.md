@@ -7,7 +7,7 @@ Practice_public_IHC
 - 단순한 계산기
 
 ### app.py
-[코드연결](./app.py)
+[코드연결](./simple_calculator/app.py)
 ```python
 from flask import Flask, render_template, request
 app = Flask(__name__)

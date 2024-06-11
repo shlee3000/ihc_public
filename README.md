@@ -6,7 +6,8 @@ Practice_public_IHC
 - flask 사용한 웹 프로그램
 - 단순한 계산기
 
-'''python
+app.py
+```python
 from flask import Flask, render_template, request
 app = Flask(__name__)
 @app.route('/')
@@ -35,4 +36,29 @@ def calculate():
 
 if __name__ == '__main__':
     app.run(debug=True)
-'''
+```
+
+templates/index.html
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+</head>
+<body>
+    <h1>Weather Information</h1>
+    <form action="/weather" method="post">
+        <input type="text" name="city" placeholder="Enter city name" required>
+        <button type="submit">Get Weather</button>
+    </form>
+    {% if weather %}
+        <h2>Weather in {{ weather.city }}</h2>
+        <p>Temperature: {{ weather.temperature }}°C</p>
+        <p>Description: {{ weather.description }}</p>
+        <img src="http://openweathermap.org/img/w/{{ weather.icon }}.png" alt="Weather icon">
+    {% endif %}
+</body>
+</html>
+```
